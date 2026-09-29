@@ -32,8 +32,9 @@ namespace WindowsFormsApp1
             // telegrama urgente?
             if (cbUrgente.Checked)
                 tipoTelegrama = 'u';
-            //Obtengo el n�mero de palabras que forma el telegrama 
-            numPalabras = textoTelegrama.Length;
+            //Obtengo el número de palabras que forma el telegrama 
+            char[] chars = { ' ', '.', ',', ';', ':', '?', '\n', '\r' }; // SOLUCIONADO POR
+            numPalabras = textoTelegrama.Split(chars).Count;			 // USUARIO 1
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
                 if (numPalabras <= 10)
